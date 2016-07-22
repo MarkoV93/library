@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+import model.Reserve;
 
 
 
@@ -26,26 +27,53 @@ public class DaoFactory {
             Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public UserDao getUserDao(){
         UserDao dao=null;
         try {
             Connection con=ds.getConnection();
-            dao=new UserDao(con);
+            dao=new UserDao(ds);
+           // dao.setCon(con);
         } catch (SQLException ex) {
             Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);
        
         }
         return dao;
     }
+     public GenreDao getGenreDao(){
+        GenreDao dao=null;
+//        try {
+//            Connection con=ds.getConnection();
+            dao=new GenreDao(ds);
+           // dao.setCon(con);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);
+//       
+//        }
+        return dao;
+    }
+    
         public BookDao getBookDao(){
         BookDao dao=null;
-        try {
-            Connection con=ds.getConnection();
-            dao=new BookDao(con);
-        } catch (SQLException ex) {
-            Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);
-       
-        }
+//        try {
+//            Connection con=ds.getConnection();
+            dao=new BookDao(ds);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);
+//       
+//        }
+        return dao;
+    }
+            public ReserveDao getReserveDao(){
+        ReserveDao dao=null;
+//        try {
+//            Connection con=ds.getConnection();
+            dao=new ReserveDao(ds);
+           // dao.setCon(con);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);
+//       
+//        }
         return dao;
     }
     public static DaoFactory getInstance(){

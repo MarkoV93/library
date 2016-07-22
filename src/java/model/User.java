@@ -1,4 +1,3 @@
-
 package model;
 
 /**
@@ -6,7 +5,13 @@ package model;
  * @author Marko
  */
 public class User {
-    int id;
+
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String login;
+    private String password;
+    private boolean isAdmin;
 
     public int getId() {
         return id;
@@ -15,12 +20,7 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-    private String firstName;
-    private String lastName;
-    private String login;
-    private String password;
-   private  boolean isAdmin;
-    
+
     public String getFirstName() {
         return firstName;
     }
@@ -60,7 +60,5 @@ public class User {
     public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
-
-
 
 }

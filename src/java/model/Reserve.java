@@ -11,39 +11,51 @@ package model;
  */
 public class Reserve {
     private int id;
-    private  int userId;
-    private int bookId;
-    private int answer;
+    private String date;
+    public  String userLogin;
+    public String bookTitle;
+    public String answer;
 
     public int getId() {
         return id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUserLogin() {
+        return userLogin;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 
-    public int getBookId() {
-        return bookId;
+    public String getBookTitle() {
+        return bookTitle;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
 
-    public int getAnswer() {
+
+
+
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(int answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 }

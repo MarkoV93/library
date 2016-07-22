@@ -7,8 +7,7 @@ public class Book {
    private  String title;
    private  String author;
   private   int qty;
-   private  int genreId;
-   private String genre="";
+   private String genre;
 
     public String getGenre() {
         return genre;
@@ -50,11 +49,5 @@ public class Book {
         this.qty = qty;
     }
 
-    public int getGenreId() {
-        return genreId;
-    }
 
-    public void setGenreId(int genreId) {
-        this.genreId = genreId;
-    }
 }

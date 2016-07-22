@@ -3,23 +3,89 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/AdminProFile.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/model/Genre.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/CreateReserve.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/model/Reserve.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/LoginCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/FindingCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/RegisterCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/controlers/Hendler.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/GoHomeAdminCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/WievReserves.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/model/Book.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/ReserveCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/dao/DaoFactory.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/dao/UserDao.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/ChangeReserveCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/BooksByGenre.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/dao/BookDao.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/UserProFile.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/RegistrationJSP.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/CommandFactory.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/Login.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/dao/AbstractDao.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/GoToFindCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/dao/ReserveDao.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/Finding.jsp</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/WievReservesCommand.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/index.html</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/dao/GenreDao.java</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/web/css/style.css</file>
+            <file>file:/C:/Users/arsen/Documents/NetBeansProjects/Library/src/java/comand/Command.java</file>
+        </group>
+        <group name="NetBeansProjects">
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/GenreDao.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/properties/text_ua_UA.properties</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/Genre.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/Reserve.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WEB-INF/ProFile.jsp</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/index.html</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/controlers/Hendler.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WievReserves.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/UserDao.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/User.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/Book.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/AbstractDao.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/UserProFile.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/WievReservesCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/ReserveCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/properties/text_en_US.properties</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/controlers/Test.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/ReturnBook.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/MyOldReserves.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/BookDao.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/DaoFactory.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Login.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/AddBookCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/CreateReserve.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/LoginCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/css/style.css</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WievOldReserves.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/Command.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/ReserveDao.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/MyReserveCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/WievOldReservesCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/RegistrationJSP.jsp</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/controlers/LoginControler.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/controlers/NewServlet.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/FindingCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/Reserve.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/BooksByGenre.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/Book.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/dao/DaoFactory.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/model/Answer.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/RegisterCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/AdminProFile.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/properties/text.properties</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/CommandFactory.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/AddBook.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/LogOutCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/index.html</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/MyReserves.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/ReturnBookCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Finding.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/ChangeReserveCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/MyOldReservesCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/comand/ChangeLanguageCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Login.jsp</file>
         </group>
     </open-files>
 </project-private>

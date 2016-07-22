@@ -11,9 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sql.DataSource;
 import model.Book;
 import model.User;
 
@@ -21,73 +23,112 @@ import model.User;
  *
  * @author Marko
  */
-public class BookDao {
-    Connection con;
-    public BookDao(Connection con){
-        this.con=con;
+public class BookDao extends AbstractDao<Book> {
+
+    public BookDao(DataSource ds) {
+        super(ds);
     }
-     public List<Book> getList(){
-        try {
-            Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("SELECT * From book inner JOIN genre On book.genre_id=genre.id;");
-            List<Book> books=new ArrayList<>();
-            while(rs.next()) {
-                Book b=new Book();
-                b.setTitle(rs.getString(2));
-                 b.setAuthor(rs.getString(3));
-                b.setQty(rs.getInt(4));
-               b.setGenre(rs.getString(6));
-                books.add(b);
-                
-            }
-            return books;
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-     public void add(Book b){
-         String title=b.getTitle();
-         String author=b.getAuthor();
-         int qty=b.getQty();
-         int genreId=b.getGenreId();
-           try {
-            PreparedStatement st = con.prepareStatement("select * from Book where title=? and author=? and  genre_id=?");
-            st.setString(1, title);
-             st.setString(2, author);
- 
-            st.setInt(3, genreId);
-            ResultSet rs=st.executeQuery();
-            if(rs.next()){
-                addNumberOfBook(b,qty);
+    public List<Book> getByGenre(String genre) throws Exception {
+        List<Book> list;
+       con=ds.getConnection();
+        try (PreparedStatement statement = con.prepareStatement("select* from book  inner join genre  on book.genre_id=genre.id where genre.genre= ?")) {
+              statement.setString(1, genre);
+            ResultSet rs = statement.executeQuery();
+            list = parseResultSet(rs);
             
-                
-            }else {
-               st=con.prepareStatement("insert into book(title,author, qty, genre_id) values (?,?,?,?)");
-               st.setString(1, title);
-               st.setString(2, author);
-               st.setInt(3, qty);
-               st.setInt(4, genreId);
-       
-               st.execute();
-                
-           
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally{
+            con.close();
+        }
+        return list;
+    }
+     public List<Book> getByAuthor(String author) throws Exception {
+        List<Book> list;
+       con=ds.getConnection();
+       author="%"+author+"%";
+        try (PreparedStatement statement = con.prepareStatement("select* from book  inner join genre  on book.genre_id=genre.id where book.author like ?")) {
+              statement.setString(1, author);
+            ResultSet rs = statement.executeQuery();
+            list = parseResultSet(rs);
+            
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally{
+            con.close();
+        }
+        return list;
+    }
+    
+     public List<String> getAuthorsOfBooks() throws Exception {
+            List<String> list=new LinkedList<>();
+       con=ds.getConnection();
+        try (PreparedStatement statement = con.prepareStatement("select author from book group by author order by author")) {
+        ResultSet rs = statement.executeQuery();
+        while(rs.next()){
+            list.add(rs.getString(1));
+        }  } catch (Exception e) {
+            throw new Exception(e);
+        } finally{
+            con.close();
+        }
+        return list;
+     }
+    @Override
+    public List<Book> parseResultSet(ResultSet rs) throws Exception {
+       List<Book> result = new LinkedList<Book>();
+        try {
+            while (rs.next()) {
+                Book b = new Book();
+                b.setTitle(rs.getString(2));
+                b.setAuthor(rs.getString(3));
+                b.setQty(rs.getInt(4));
+                b.setGenre(rs.getString(7));
+                result.add(b);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
+        } catch (Exception e) {
+            throw new Exception(e);
         }
-   
-     }
-     public void addNumberOfBook(Book b,int n){
-          String title=b.getTitle();    
-         try {
-            PreparedStatement st = con.prepareStatement("UPDATE book SET qty = qty + ? WHERE title = '?';");
-                st.setInt(1, n);
-               st.setString(2, title);
-           } catch (SQLException ex) {
-            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
+        return result;
+
+    }
+
+    @Override
+    public void prepareStatementForInsert(PreparedStatement st, Book b) throws Exception {
+        try {
+
+            st.setString(1, b.getTitle());
+            st.setString(2, b.getAuthor());
+            st.setInt(3, b.getQty());
+            st.setString(4, b.getGenre());
+
+        } catch (Exception e) {
+            throw new Exception(e);
         }
-     }
+    }
+
+    @Override
+    public String getSelectQuery() {
+        return "select * from book inner join genre on book.genre_id=genre.id order by book.title";
+    }
+
+    @Override
+    public String getCreateQuery() {
+        return "INSERT INTO book ( title,author,qty,genre_id ) VALUES(?,?,?,(select id from genre where genre=?))";
+    }
+
+    @Override
+    public String getSelectCreteria() {
+        return "select* from book  inner join genre  on book.genre_id=genre.id where book.title= ?";
+    }
+
+    @Override
+    public String getDeleteQuery() {
+        return "DELETE FROM book WHERE title= ?";
+    }
+
+    @Override
+    protected String getUpdateQuery() {
+        return "UPDATE book  SET qty = ? WHERE title = ?;";
+    }
 }
