@@ -6,49 +6,59 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Ald Reserves!</h1>
-                <ul>
-                 <table border="1">
-                     <tr> <b>
-                <td>User login</td> 
-                <td>Book title </td> 
-                <td>Answer</td>
-                 <td>Date</td>
-                     </b>
-            </tr>
-        <c:forEach var="reserve" items="${requestScope.reserves}">
-            <tr>
-                <td>${reserve.userLogin}</td> 
-                <td>${reserve.bookTitle} </td> 
-                <td>${reserve.answer}</td>
-                <td>${reserve.date}</td>
-            </tr>
-        </c:forEach>
-        </ul>
-        <form action="login" method="post">
-             <input type="submit" name="OK" value="To home page"/>
+<fmt:setLocale value="${sessionScope.locale}" scope="session" />
+<fmt:bundle basename="com.univ.vintoniuk.properties.text">
+    <html>
+        <head>
+            <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" type="text/css" />
+            <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>JSP Page</title>
+        </head>
+        <body>
+            <form action="changeLanguage" method="post">       
+                <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
-           <form action="wievReserves" method="post">
-             <input type="submit" name="OK" value="Wiev Reserves"/>
-          </form>
-              <form action="addBook" method="post">
-             <input type="submit" name="goToAddBook" value="Add book to library"/>
-          </form>
-             <form action="wievOldReserves" method="post">
-              <input type="submit" name="wievOldReserves" value="wiev old reserves"/>
-              </form>
-        <form action="returnBook" method="post">
-              <input type="submit" name="Return book" value="Return book"/>
-              </form>
-         <form action="logOut" method="post">
-             <input type="submit" name="OK" value="Log Out"/>
-            </form>
-    </body>
-</html>
+            <h1><fmt:message key="wievOldReserves"/></h1>
+            <ul>
+                <div class="col-sm-11 col-md-11 col-lg-11">
+                    <table border="2"  class="table  table-hover  ">
+                        <tr> <b>
+                            <td><fmt:message key="userLogin"/></td> 
+                            <td><fmt:message key="bookTitle"/></td> 
+                            <td><fmt:message key="answer"/></td>
+                            <td><fmt:message key="date"/></td>
+                        </b>
+                        </tr>
+                        <c:forEach var="reserve" items="${requestScope.reserves}">
+                            <tr>
+                                <td>${reserve.userLogin}</td> 
+                                <td>${reserve.bookTitle} </td> 
+                                <td>${reserve.answer}</td>
+                                <td>${reserve.date}</td>
+                            </tr>
+                        </c:forEach>
+                        </ul>
+                        <form action="login" method="post">
+                            <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="backToUserPage"/></button>
+                        </form>
+                        <form action="wievReserves" method="post">
+                            <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="wievReserves"/></button>
+                        </form>
+                        <form action="addBook" method="post">
+                            <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="addBook"/></button>
+                        </form>
+                        <form action="wievOldReserves" method="post">
+                            <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="wievOldReserves"/></button>
+                        </form>
+                        <form action="returnBook" method="post">
+                            <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="returnBook"/></button>
+                        </form>
+                        <form action="logOut"  method="post">
+                            <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="logOut"/></button>
+                        </form>
+                        </body>
+                        </html>
+                    </fmt:bundle>
