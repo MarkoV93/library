@@ -37,11 +37,13 @@ public class ReserveDao extends AbstractDao<Reserve> {
         Locale locale = Locale.getDefault();
         labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", locale);
     }
-/**
- * 
- * @return list of reservis with fild of answer:"wiev for give to hand,wiev for give to reading room
- * @throws DAOLibraryException 
- */
+
+    /**
+     *
+     * @return list of reservis with fild of answer:"wiev for give to hand,wiev
+     * for give to reading room
+     * @throws DAOLibraryException
+     */
     public List<Reserve> getAllWievingRes() throws DAOLibraryException {
         List<Reserve> list;
         String sql = labels.getString("getAllWievingRes");//get sqlquery from properties file
@@ -50,12 +52,13 @@ public class ReserveDao extends AbstractDao<Reserve> {
 
         return list;
     }
-/**
- * 
- * @param sql query in DB which return list of Reserves
- * @return return List of Reserves depending on @param sql
- * @throws DAOLibraryException 
- */
+
+    /**
+     *
+     * @param sql query in DB which return list of Reserves
+     * @return return List of Reserves depending on @param sql
+     * @throws DAOLibraryException
+     */
     private List<Reserve> getAllForCommand(String sql) throws DAOLibraryException {
         try {
             List<Reserve> list;
@@ -76,31 +79,36 @@ public class ReserveDao extends AbstractDao<Reserve> {
             }
         }
     }
-/**
- * 
- * @return list of reservis with fild of answer:"give to hand,give in reading room
- * @throws DAOLibraryException 
- */
+
+    /**
+     *
+     * @return list of reservis with fild of answer:"give to hand,give in
+     * reading room
+     * @throws DAOLibraryException
+     */
     public List<Reserve> getAllReservsForReturn() throws DAOLibraryException {
         List<Reserve> list;
         String sql = labels.getString("getAllReservsForReturn");//get sqlquery from properties file
         list = this.getAllForCommand(sql);//inwoke private method wich create PrepareStatement and pars ResultSet
         return list;
     }
-/**
- * @return list of reservis with fild of answer:"returned ,refused
- * @throws DAOLibraryException 
- */
+
+    /**
+     * @return list of reservis with fild of answer:"returned ,refused
+     * @throws DAOLibraryException
+     */
     public List<Reserve> getAllWievedRes() throws DAOLibraryException {
         List<Reserve> list;
         String sql = labels.getString("getAllWievedRes");//get sqlquery from properties file
         list = this.getAllForCommand(sql);//inwoke private method wich create PrepareStatement and pars ResultSet
         return list;
     }
-/**
- * @return list of reservis with fild of answer:"returned" ,"refused" and with login_id like id in user whis login @param login 
- * @throws DAOLibraryException 
- */
+
+    /**
+     * @return list of reservis with fild of answer:"returned" ,"refused" and
+     * with login_id like id in user whis login @param login
+     * @throws DAOLibraryException
+     */
     public List<Reserve> getAllOldResByLogin(String login) throws DAOLibraryException {
         List<Reserve> list;
         String sql = labels.getString("getAllOldResByLogin");
@@ -108,10 +116,12 @@ public class ReserveDao extends AbstractDao<Reserve> {
         list = this.getAllForCommand(sql);
         return list;
     }
-/**
- * @return list of all reservis  with login_id like id in user whis login @param login 
- * @throws DAOLibraryException 
- */
+
+    /**
+     * @return list of all reservis with login_id like id in user whis login
+     * @param login
+     * @throws DAOLibraryException
+     */
     public List<Reserve> getReservesByLogin(String login) throws DAOLibraryException {
         List<Reserve> list;
         String sql = labels.getString("getReservesByLogin");//get sqlquery from properties file
@@ -120,16 +130,18 @@ public class ReserveDao extends AbstractDao<Reserve> {
         return list;
     }
 //override method for getAll method
+
     @Override
     protected String getSelectQuery() {
         return labels.getString("getSelectQueryReserve");
     }
-/**
- * 
- * @param ResultSet for parsing
- * @return list of reserves
- * @throws DAOLibraryException 
- */
+
+    /**
+     *
+     * @param ResultSet for parsing
+     * @return list of reserves
+     * @throws DAOLibraryException
+     */
     @Override
     protected List<Reserve> parseResultSet(ResultSet rs) throws DAOLibraryException {
         List<Reserve> result = new LinkedList<>();
@@ -150,10 +162,11 @@ public class ReserveDao extends AbstractDao<Reserve> {
         }
         return result;
     }
-/**
- * 
- * @return  database query por updating Reserve in DB, 
- */
+
+    /**
+     *
+     * @return database query por updating Reserve in DB,
+     */
     @Override
     protected String getUpdateQuery() {
         Locale local = new Locale("ru", "RU");
@@ -161,17 +174,18 @@ public class ReserveDao extends AbstractDao<Reserve> {
         Date currentDate = new Date();
         return "UPDATE reserve  SET answer =(select id from answer where answer=?), date='" + df.format(currentDate) + "' WHERE id = ?;";
     }
-/**
- * 
- * @return query for delete reserve 
- */
+
+    /**
+     *
+     * @return query for delete reserve
+     */
     @Override
-    public String getDeleteQuery() {
+    protected String getDeleteQuery() {
         return "DELETE FROM reserve WHERE id= ?;";
     }
 
     @Override
-    public void prepareStatementForInsert(PreparedStatement statement, Reserve r) throws DAOLibraryException {
+    protected void prepareStatementForInsert(PreparedStatement statement, Reserve r) throws DAOLibraryException {
         try {
 
             statement.setString(1, r.getUserLogin());
@@ -184,7 +198,7 @@ public class ReserveDao extends AbstractDao<Reserve> {
     }
 
     @Override
-    public String getCreateQuery() {
+    protected String getCreateQuery() {
         Locale local = new Locale("ru", "RU");
         DateFormat df = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, local);
         Date currentDate = new Date();

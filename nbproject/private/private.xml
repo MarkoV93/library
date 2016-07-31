@@ -47,9 +47,11 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/UserProFile.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/GenreDao.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/LogOutCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/ReturnBookCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/properties/classesForTags/MessageAboutReserve.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/dao/UserDaoTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/LoginCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/MyOldReservesCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/ReturnBook.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/BooksByAuthor.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/MyOldReserves.jsp</file>
@@ -66,18 +68,20 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/dao/ReserveDaoTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/CommandFactory.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/ChangeLaungageCommandTest.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/RegisterCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/ReserveDao.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/RegisterCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/BooksByGenre.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/dao/BookDaoTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/requestWrapper/IRequestWrapper.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/WievReservesCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/filters/BadRequestFilter.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/DAOLibraryException.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/Command.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/WievOldReservesCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/AdminProFile.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/MyOldReservesTest.java</file>
-            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/BookDao.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/WievReservesCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/BookDao.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/nbproject/build-impl.xml~</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/RegisterCommandTest.java</file>
@@ -90,9 +94,11 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/MyReserves.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Finding.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/ReserveCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/FindingCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/filters/CharacterEncoding.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Login.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/ReserveCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/properties/text_ua_UA.properties</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/ReturnBookCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/log4j.properties</file>

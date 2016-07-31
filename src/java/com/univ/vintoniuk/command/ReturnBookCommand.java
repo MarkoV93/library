@@ -31,9 +31,8 @@ public class ReturnBookCommand extends Command {
         DaoFactory factory = this.getFactory();
         ReserveDao reserves = factory.getReserveDao();
         BookDao books = factory.getBookDao();
-        HttpSession hs = request.getSession(true);
         if (request.getParameter("returnId") != null) {//if admin press button "return"
-            ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
+            ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
             String id = request.getParameter("returnId");//get id of reserve
             Reserve reserve = reserves.getByCreteria(id);
             reserves.updateByCreteria("returned", id);//change reserve status on "returned

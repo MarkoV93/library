@@ -64,17 +64,17 @@ public class GenreDao extends AbstractDao<Genre> {
     }
 
     @Override
-    public String getDeleteQuery() {
+    protected String getDeleteQuery() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void prepareStatementForInsert(PreparedStatement statement, Genre object) throws DAOLibraryException {
+    protected void prepareStatementForInsert(PreparedStatement statement, Genre object) throws DAOLibraryException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String getCreateQuery() {
+    protected String getCreateQuery() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -206,11 +206,11 @@ public abstract class AbstractDao<T> {
 
     protected abstract String getUpdateQuery();
 
-    public abstract String getDeleteQuery();
+   protected abstract String getDeleteQuery();
 
-    public abstract void prepareStatementForInsert(PreparedStatement statement, T object) throws DAOLibraryException;
+    protected abstract void prepareStatementForInsert(PreparedStatement statement, T object) throws DAOLibraryException;
 
-    public abstract String getCreateQuery();
+    protected abstract String getCreateQuery();
 
     protected abstract String getSelectCreteria();
 

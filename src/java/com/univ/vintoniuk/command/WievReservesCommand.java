@@ -23,8 +23,8 @@ import com.univ.vintoniuk.model.Reserve;
 
 /**
  *
- * @author Marko
- * Class for wieving reserves with status "wiev for give to hend" and "wiev for give to reading room" and change them by admin
+ * @author Marko Class for wieving reserves with status "wiev for give to hend"
+ * and "wiev for give to reading room" and change them by admin
  * @return ""WievReserves.jsp""
  */
 public class WievReservesCommand extends Command {
@@ -32,31 +32,29 @@ public class WievReservesCommand extends Command {
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         String applyId = request.getParameter("applylId");
-        String act = request.getParameter("act");
         HttpSession hs = request.getSession(true);
         DaoFactory factory = this.getFactory();
         BookDao books = factory.getBookDao();
         ReserveDao reserves = factory.getReserveDao();
-        ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
+        ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
         if (request.getParameter("censelId") != null) {//if admin press button "cencel"
             String id = request.getParameter("censelId");
             request.setAttribute("message", labels.getString("reserveCenseled"));
             reserves.updateByCreteria("refused", id);
-        }
-        if (applyId != null) { //if admin press button "apply"
-            String id = request.getParameter("applylId");
-            Reserve reserve = reserves.getByCreteria(id);
+        } else if (applyId != null) { //if admin press button "apply"
+             applyId = request.getParameter("applylId");
+            Reserve reserve = reserves.getByCreteria(applyId);
             Book book = books.getByCreteria(reserve.getBookTitle());
             if (book.getQty() < 1) {//if quantity of this book is 0, reserve get status "refused"
-                reserves.updateByCreteria("refused", id);
+                reserves.updateByCreteria("refused", applyId);
                 request.setAttribute("message", labels.getString("reserveCenseled"));
             } else {////if quantity of this book is not 0
                 if (reserve.getAnswer().equals("wiev for give to hend")) {//if status of reserve "wiev for give to hend", then it change on "give to hend"
-                    reserves.updateByCreteria("give to hend", id);
+                    reserves.updateByCreteria("give to hend", applyId);
                     request.setAttribute("message", labels.getString("bookWillBeGivenInHend"));
                 } else {//if status of reserve "wiev for give in reading room", then it change on "give in reading room"
-                    reserves.updateByCreteria("give in reading room", id);
-                    request.setAttribute("message",  labels.getString("bookWillBeGivenInTheReadingRoom"));
+                    reserves.updateByCreteria("give in reading room", applyId);
+                    request.setAttribute("message", labels.getString("bookWillBeGivenInTheReadingRoom"));
 
                 }
                 books.updateByCreteria(Integer.toString(book.getQty() - 1), book.getTitle());//quantity decreases by 1

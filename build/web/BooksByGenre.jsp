@@ -44,7 +44,7 @@
                                 <td>     ${book.genre} </td> 
                                 <td>     ${book.qty} </td>
                                   <form action="reserve" method="post">
-                                <td><button class="btn btn-primary" value="${book.title}" name="title" type="submit" class="btn btn-default"><fmt:message key="reserveAgein"/></button></p></td>
+                                <td><button class="btn btn-primary" value="${book.title}" name="title" type="submit" class="btn btn-default"><fmt:message key="reserve"/></button></p></td>
                             </form>
                             </tr>
                         </c:forEach>

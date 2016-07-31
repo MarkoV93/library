@@ -119,7 +119,7 @@ public class BookDao extends AbstractDao<Book> {
  * @throws DAOLibraryException 
  */
     @Override
-    public List<Book> parseResultSet(ResultSet rs) throws DAOLibraryException {
+    protected List<Book> parseResultSet(ResultSet rs) throws DAOLibraryException {
         List<Book> result = new LinkedList<Book>();
 
         try {
@@ -142,7 +142,7 @@ public class BookDao extends AbstractDao<Book> {
     }
 
     @Override
-    public void prepareStatementForInsert(PreparedStatement st, Book b) throws DAOLibraryException  {
+   protected void prepareStatementForInsert(PreparedStatement st, Book b) throws DAOLibraryException  {
      
 
         try {
@@ -159,22 +159,22 @@ public class BookDao extends AbstractDao<Book> {
     }
 
     @Override
-    public String getSelectQuery() {
+    protected String getSelectQuery() {
         return labels.getString("getSelectQueryBook");
     }
 
     @Override
-    public String getCreateQuery() {
+    protected String getCreateQuery() {
         return labels.getString("getCreateQueryBook");
     }
 
     @Override
-    public String getSelectCreteria() {
+    protected String getSelectCreteria() {
         return labels.getString("getSelectCreteriaBook");
     }
 
     @Override
-    public String getDeleteQuery() {
+    protected String getDeleteQuery() {
         return labels.getString("getDeleteQueryBook");
     }
 

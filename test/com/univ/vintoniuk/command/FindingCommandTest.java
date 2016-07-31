@@ -43,15 +43,7 @@ public class FindingCommandTest {
          when(fc.execute(rw)).thenCallRealMethod();
     }
 
-    @Test
-    public void FindByTitle() throws DAOLibraryException {
 
-        when(rw.getParameter("Reserve")).thenReturn("Ok");
-        when(rw.getParameter("title")).thenReturn("kult");     
-        when(books.getByCreteria("kult")).thenReturn(new Book());     
-        String path = fc.execute(rw);
-        Assert.assertEquals(path, "/CreateReserve.jsp");
-    }
     
      @Test
     public void FindByGenre() throws DAOLibraryException {

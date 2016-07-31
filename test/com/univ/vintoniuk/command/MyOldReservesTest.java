@@ -57,15 +57,5 @@ public class MyOldReservesTest {
         Assert.assertEquals(path, "/MyOldReserves.jsp");
     }
     
-     @Test
-    public void reserveAgain() throws DAOLibraryException {
-       when(rw.getParameter("oldReserveId")).thenReturn("1");
-       BookDao books=mock(BookDao.class);
-       when(factory.getBookDao()).thenReturn(books);
-     //  Reserve reserve=mock(Reserve.class);
-       when(reserves.getByCreteria(anyString())).thenReturn(new Reserve());
-       when(books.getByCreteria(anyString())).thenReturn(new Book());
-        String path = morc.execute(rw);
-        Assert.assertEquals(path, "/CreateReserve.jsp");
-    }
+ 
 }

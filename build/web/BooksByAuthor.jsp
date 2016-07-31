@@ -16,6 +16,7 @@
 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" type="text/css" />
+              <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
             <title>JSP Page</title>
         </head>
         <body>
@@ -43,7 +44,7 @@
                                 <td>     ${book.genre} </td> 
                                 <td>     ${book.qty} </td>
                                  <form action="reserve" method="post">
-                                <td><button class="btn btn-primary" value="${book.title}" name="title" type="submit" class="btn btn-default"><fmt:message key="reserveAgein"/></button></p></td>
+                                <td><button class="btn btn-primary" value="${book.title}" name="title" type="submit" class="btn btn-default"><fmt:message key="reserve"/></button></p></td>
                             </form>
                             </tr>
                         </c:forEach>
