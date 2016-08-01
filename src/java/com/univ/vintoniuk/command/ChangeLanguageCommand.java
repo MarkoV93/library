@@ -22,6 +22,7 @@ public class ChangeLanguageCommand extends Command {
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         HttpSession hs = request.getSession(true);
         String req = (String) hs.getAttribute("req");//read from HttpSession last request, for owerloading page
+        Locale newLocale;
         if (req == null) {
             req = "/login";
         }
@@ -30,12 +31,12 @@ public class ChangeLanguageCommand extends Command {
         Locale locale = Locale.getDefault();// 
 
         if (locale.getLanguage().equals("en")) {//invert locale
-            Locale newLocale = new Locale("ua", "UA");
+            newLocale = new Locale("ua", "UA");
             Locale.setDefault(newLocale);
             hs.setAttribute("locale", newLocale);
 
         } else {//invert locale
-            Locale newLocale = new Locale("en", "US");
+             newLocale = new Locale("en", "US");
             Locale.setDefault(newLocale);
             hs.setAttribute("locale", newLocale);
         }

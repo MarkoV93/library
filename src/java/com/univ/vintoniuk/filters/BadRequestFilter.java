@@ -45,8 +45,6 @@ public class BadRequestFilter implements Filter {
         } else {
             RequestDispatcher rd = ((HttpServletRequest) request).getRequestDispatcher("/error.html");
             rd.forward(request, response);
-//            String contextPath = ((HttpServletRequest) request).getContextPath();
-//            ((HttpServletResponse) response).sendRedirect(contextPath + "/error.html");
         }
 
     }
