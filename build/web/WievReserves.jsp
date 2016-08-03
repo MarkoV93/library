@@ -36,6 +36,7 @@
                             <td><fmt:message key="userLogin"/></td> 
                             <td><fmt:message key="bookTitle"/></td> 
                             <td><fmt:message key="answer"/></td>
+                             <td><fmt:message key="date"/></td>
                         </b>
                         </tr>
                         <c:forEach var="reserve" items="${requestScope.reserves}">
@@ -44,6 +45,7 @@
                                 <td>${reserve.userLogin}</td> 
                                 <td>${reserve.bookTitle} </td> 
                                 <td>${reserve.answer}</td>
+                                <td>${reserve.date}</td>
                             <form action="wievReserves" method="post">
                                 <td><button value=${reserve.id} name="applylId" type="submit" class="btn btn-primary"><fmt:message key="apply"/></button></p></td>
                                 <td><button value=${reserve.id} name="censelId" type="submit" class="btn btn-primary"><fmt:message key="cencel"/></button></p></td>
