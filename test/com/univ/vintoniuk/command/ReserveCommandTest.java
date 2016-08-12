@@ -48,6 +48,8 @@ public class ReserveCommandTest {
 
     @Test
     public void findWrongTitleBook() throws DAOLibraryException {
+        when(rw.getParameter("title")).thenReturn("title");
+        when(books.getByCreteria(anyString())).thenReturn(null);
         GenreDao genres = mock(GenreDao.class);
         when(factory.getGenreDao()).thenReturn(genres);
         when(genres.getAll()).thenReturn(null);

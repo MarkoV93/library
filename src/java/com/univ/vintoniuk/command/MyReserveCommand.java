@@ -33,7 +33,8 @@ public class MyReserveCommand extends Command {
         if (request.getParameter("censelId") != null) {//if user press button "cencel Reserve" 
             ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
             String id = request.getParameter("censelId");
-            if (reserves.getByCreteria(id).getAnswer().equals("wiev for give to reading room") || reserves.getByCreteria(id).getAnswer().equals("wiev for give to hend")) {
+          String answer=  reserves.getByCreteria(id).getAnswer().getAnswer();
+            if (answer.equals("wiev for give to reading room") || answer.equals("wiev for give to hend")) {
                 //if reserve did not wiev then reserve cencel
                 request.setAttribute("message", labels.getString("reserveCenseled"));
                 reserves.updateByCreteria("refused", id);

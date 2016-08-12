@@ -44,7 +44,7 @@ public class WievReservesCommand extends Command {
         } else if (applyId != null) { //if admin press button "apply"
              applyId = request.getParameter("applylId");
             Reserve reserve = reserves.getByCreteria(applyId);
-            Book book = books.getByCreteria(reserve.getBookTitle());
+            Book book = reserve.getBook();
             if (book.getQty() < 1) {//if quantity of this book is 0, reserve get status "refused"
                 reserves.updateByCreteria("refused", applyId);
                 request.setAttribute("message", labels.getString("reserveCenseled"));

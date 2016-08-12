@@ -44,6 +44,8 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WEB-INF/messageAboutReserve.tld</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/META-INF/context.xml</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/MyReserveCommand.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/model/Reserve.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/model/User.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/UserProFile.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/GenreDao.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/LogOutCommand.java</file>
@@ -68,6 +70,7 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/ChangeLanguageCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/dao/ReserveDaoTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/CommandFactory.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/model/Genre.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/ChangeLaungageCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/ReserveDao.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/RegisterCommand.java</file>
@@ -80,8 +83,10 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/Command.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/WievOldReservesCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/AdminProFile.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/model/Book.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/MyOldReservesTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/BookDao.java</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/WievReservesCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/nbproject/build-impl.xml~</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/RegisterCommandTest.java</file>
@@ -89,10 +94,12 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/dao/DaoFactory.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/error.html</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/AddBook.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/model/Answer.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/index.html</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/LoginCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/MyReserves.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Finding.jsp</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/ReserveCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/AddBookCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/FindingCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/nbproject/build-impl.xml</file>
@@ -100,6 +107,7 @@
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/web/Login.jsp</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/test/com/univ/vintoniuk/command/ReserveCommandTest.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/properties/text_ua_UA.properties</file>
+            <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/com/univ/vintoniuk/command/ReturnBookCommand.java</file>
             <file>file:/C:/Users/Marko/Documents/NetBeansProjects/Library/src/java/log4j.properties</file>
         </group>
     </open-files>

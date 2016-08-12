@@ -9,6 +9,7 @@ import com.univ.vintoniuk.dao.BookDao;
 import com.univ.vintoniuk.dao.DAOLibraryException;
 import com.univ.vintoniuk.dao.DaoFactory;
 import com.univ.vintoniuk.dao.ReserveDao;
+import com.univ.vintoniuk.model.Answer;
 import com.univ.vintoniuk.model.Book;
 import com.univ.vintoniuk.model.Reserve;
 import com.univ.vintoniuk.requestWrapper.IRequestWrapper;
@@ -48,9 +49,13 @@ public class WievReservesCommandTest {
         reserve = mock(Reserve.class);
         book = mock(Book.class);
         when(reserves.getByCreteria(Matchers.anyString())).thenReturn(reserve);
-        when(reserve.getBookTitle()).thenReturn("kult");
+        Book book=new Book();
+        book.setTitle("kult");
+        when(reserve.getBook()).thenReturn(book);
         when(books.getByCreteria(Matchers.anyString())).thenReturn(book);
-        when(reserve.getAnswer()).thenReturn("wiev for give to hend");
+        Answer answer=new Answer();
+        answer.setAnswer("wiev for give to hend");
+        when(reserve.getAnswer()).thenReturn(answer);
     }
 
     @Test

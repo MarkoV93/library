@@ -12,9 +12,9 @@ package com.univ.vintoniuk.model;
 public class Reserve {
     private int id;
     private String date;
-    public  String userLogin;
-    public String bookTitle;
-    public String answer;
+    public  User user;
+    public Book book;
+    public Answer answer;
 
     public int getId() {
         return id;
@@ -32,30 +32,28 @@ public class Reserve {
         this.id = id;
     }
 
-    public String getUserLogin() {
-        return userLogin;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserLogin(String userLogin) {
-        this.userLogin = userLogin;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public String getBookTitle() {
-        return bookTitle;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
+    public void setBook(Book book) {
+        this.book = book;
     }
 
-
-
-
-    public String getAnswer() {
+    public Answer getAnswer() {
         return answer;
     }
 
     public void setAnswer(String answer) {
-        this.answer = answer;
+        this.answer = new Answer();
+        this.answer.setAnswer(answer);
     }
 }

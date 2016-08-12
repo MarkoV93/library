@@ -32,9 +32,9 @@
                         </tr>
                         <c:forEach var="reserve" items="${requestScope.reserves}">
                             <tr>
-                                <td>${reserve.userLogin}</td> 
-                                <td>${reserve.bookTitle} </td> 
-                                <td>${reserve.answer}</td>
+                                <td>${reserve.user.login}</td> 
+                                <td>${reserve.book.title} </td> 
+                                <td>${reserve.answer.answer}</td>
                                 <td>${reserve.date}</td>
                             </tr>
                         </c:forEach>

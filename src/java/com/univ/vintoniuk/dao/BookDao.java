@@ -149,7 +149,7 @@ public class BookDao extends AbstractDao<Book> {
             st.setString(1, b.getTitle());
             st.setString(2, b.getAuthor());
             st.setInt(3, b.getQty());
-            st.setString(4, b.getGenre());
+            st.setString(4, b.getGenre().getGenre());
         } catch (SQLException ex) {
                logger.error("Exception onpreparing statement for insert in BookDAO",ex);
             throw new DAOLibraryException("Exception onpreparing statement for insert in BookDAO" + ex.getMessage());

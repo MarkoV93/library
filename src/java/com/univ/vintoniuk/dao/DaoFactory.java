@@ -22,7 +22,6 @@ public class DaoFactory {
     private DaoFactory() {
         try {
             InitialContext contex = new InitialContext();
-
             ds = (DataSource) contex.lookup("java:comp/env/jdbc/dbconnect");
         } catch (NamingException ex) {
             Logger.getLogger(DaoFactory.class.getName()).log(Level.SEVERE, null, ex);

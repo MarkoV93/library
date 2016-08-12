@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.univ.vintoniuk.model.User;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 /**
  *
  * Class for Registration new user

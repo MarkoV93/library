@@ -7,14 +7,15 @@ public class Book {
    private  String title;
    private  String author;
   private   int qty;
-   private String genre;
+   private Genre genre;
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        this.genre = new Genre();
+        this.genre.setGenre(genre);
     }
 
     public int getId() {

@@ -78,7 +78,7 @@
                         <tr>
                             <td>     ${book.title} </td> 
                             <td>     ${book.author}</td> 
-                            <td>     ${book.genre} </td> 
+                            <td>     ${book.genre.genre} </td> 
                             <td>     ${book.qty} </td>
                         </tr>
                         <br>

@@ -46,7 +46,6 @@ public class FindingCommand extends Command {
             request.setAttribute("author", authorBook);
             return "/BooksByAuthor.jsp";
         } else {
-
             List<String> listAuthors = books.getAuthorsOfBooks();
             request.setAttribute("authors", listAuthors);
             GenreDao genres = factory.getGenreDao();

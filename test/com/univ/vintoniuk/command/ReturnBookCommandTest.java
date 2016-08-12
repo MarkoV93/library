@@ -54,7 +54,9 @@ public class ReturnBookCommandTest {
         when(rw.getParameter("returnId")).thenReturn("4");
         Reserve reserve=mock(Reserve.class);
         when(reserves.getByCreteria(Matchers.anyString())).thenReturn(reserve);
-        when(reserve.getBookTitle()).thenReturn("kult");
+        Book book=new Book();
+        book.setTitle("kult");
+        when(reserve.getBook()).thenReturn(book);
         when(books.getByCreteria(Matchers.anyString())).thenReturn(new Book());
         String path = rbc.execute(rw);
         Assert.assertEquals(path, "/ReturnBook.jsp");

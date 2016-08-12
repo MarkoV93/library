@@ -43,8 +43,8 @@
                                 <tr>
 
 
-                                    <td>${reserve.bookTitle} </td> 
-                                    <td>${reserve.answer}</td>
+                                    <td>${reserve.book.title} </td> 
+                                    <td>${reserve.answer.answer}</td>
                                     <td>${reserve.date}</td>
                                     <td><button value=${reserve.id} name="censelId" type="submit"  class="btn btn-primary"><fmt:message key="cencel"/></button></p></td>
                                 </tr>

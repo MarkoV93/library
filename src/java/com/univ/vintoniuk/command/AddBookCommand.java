@@ -36,11 +36,16 @@ public class AddBookCommand extends Command{
             String author = request.getParameter("author");
             String qty = request.getParameter("qty");
             String genre = request.getParameter("genre");
-            if (!request.getParameter("qty").matches("[0-9]*")) {//if user write in field "qty" not number on AddBook.jsp
+            if (!qty.matches("[0-9]*")||qty.equals("")) {//if user write in field "qty" not number on AddBook.jsp
                 request.setAttribute("message", labels.getString("putCurrentIntoQty"));//set message about wrong number and reload page
-            } else if (request.getParameter("genre").equals("select")) {////if user not chouse genre in field genre on AddBook.jsp
+            } else if (genre.equals("select")) {////if user not chouse genre in field genre on AddBook.jsp
                 request.setAttribute("message", labels.getString("selectGenreArea"));
-            } else {
+            } else if(title.equals("")){
+                 request.setAttribute("message", labels.getString("putCurrentIntoQty"));
+            } else if(author.equals("")){
+                 request.setAttribute("message", labels.getString("putCurrentIntoQty"));
+            }
+             else{
                 if (books.getByCreteria(title) != null) {//if DB has row with the same title of  book ,add to qty
                     int newQty = books.getByCreteria(title).getQty() + Integer.parseInt(qty);
                     books.updateByCreteria(Integer.toString(newQty), title);

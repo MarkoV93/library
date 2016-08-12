@@ -37,7 +37,7 @@ public class ReturnBookCommand extends Command {
             Reserve reserve = reserves.getByCreteria(id);
             reserves.updateByCreteria("returned", id);//change reserve status on "returned
             request.setAttribute("message", labels.getString("bookWasReturned"));
-            Book book = books.getByCreteria(reserve.getBookTitle());
+            Book book = reserve.getBook();
             books.updateByCreteria(Integer.toString(book.getQty() + 1), book.getTitle());//add to 1 to quantity of this in DB
         }
         List<Reserve> listReserves = reserves.getAllReservsForReturn();

@@ -150,8 +150,17 @@ public class ReserveDao extends AbstractDao<Reserve> {
                 Reserve r = new Reserve();
                 r.setId(rs.getInt(1));
                 r.setDate(rs.getString(5));
-                r.setUserLogin(rs.getString(9));
-                r.setBookTitle(rs.getString(13));
+                User user = new User();
+                user.setFirstName(rs.getString(7));
+                user.setLastName(rs.getString(8));
+                user.setLogin(rs.getString(9));
+                r.setUser(user);
+                Book book = new Book();
+                book.setTitle(rs.getString(13));
+                book.setAuthor(rs.getString(14));
+                book.setQty(rs.getInt(15));
+                book.setGenre(rs.getString(16));
+                r.setBook(book);
                 r.setAnswer(rs.getString(18));
 
                 result.add(r);//Add reserve  to list for returnig after parsing
@@ -188,9 +197,9 @@ public class ReserveDao extends AbstractDao<Reserve> {
     protected void prepareStatementForInsert(PreparedStatement statement, Reserve r) throws DAOLibraryException {
         try {
 
-            statement.setString(1, r.getUserLogin());
-            statement.setString(2, r.getBookTitle());
-            statement.setString(3, r.getAnswer());
+            statement.setString(1, r.getUser().getLogin());
+            statement.setString(2, r.getBook().getTitle());
+            statement.setString(3, r.getAnswer().getAnswer());
 
         } catch (SQLException ex) {
             throw new DAOLibraryException("Exception on delete in AbstractDao.Cause " + ex.getMessage());

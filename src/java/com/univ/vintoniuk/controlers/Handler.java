@@ -47,7 +47,8 @@ public class Handler extends HttpServlet {
             path = handler.execute(wrapper);//execute revelant command
         } catch (DAOLibraryException ex) {
             logger.error("something wrong with exucute method", ex);
-            ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
+           ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
+           request.setAttribute("errorMessage", ex);
             path = "/error.html";
         }
         if (!request.getServletPath().equals("/changeLanguage")&&!request.getServletPath().equals("/logOut")) {

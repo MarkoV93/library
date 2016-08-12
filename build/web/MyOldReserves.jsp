@@ -40,11 +40,11 @@
                         <c:forEach var="reserve" items="${requestScope.reserves}">
                             <tr>
 
-                                <td>${reserve.bookTitle} </td> 
-                                <td>${reserve.answer}</td>
+                                <td>${reserve.book.title} </td> 
+                                <td>${reserve.answer.answer}</td>
                                 <td>${reserve.date}</td>
                             <form action="reserve" method="post">
-                                <td><button class="btn btn-primary" value=${reserve.bookTitle} name="title" type="submit" class="btn btn-default"><fmt:message key="reserveAgein"/></button></p></td>
+                                <td><button class="btn btn-primary" value=${reserve.book.title} name="title" type="submit" class="btn btn-default"><fmt:message key="reserveAgein"/></button></p></td>
                             </form>
 
                             </tr>

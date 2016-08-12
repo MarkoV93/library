@@ -22,11 +22,11 @@ public class Answer {
         this.id = id;
     }
 
-    public String getGenre() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setGenre(String genre) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
     

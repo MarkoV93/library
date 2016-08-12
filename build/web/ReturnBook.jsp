@@ -37,9 +37,9 @@
 
                         <c:forEach var="reserve" items="${requestScope.reserves}">
                             <tr>
-                                <td>${reserve.userLogin}</td> 
-                                <td>${reserve.bookTitle} </td> 
-                                <td>${reserve.answer}</td>
+                                <td>${reserve.user.login}</td> 
+                                <td>${reserve.book.title} </td> 
+                                <td>${reserve.answer.answer}</td>
                                 <td>${reserve.date}</td>
                             <form action="returnBook" method="post">
                                 <td><button value=${reserve.id} name="returnId" type="submit" class="btn btn-primary"><fmt:message key="return"/></button></p></td>
