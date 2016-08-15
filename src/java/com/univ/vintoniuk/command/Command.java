@@ -12,18 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ *abstract class for commands
  * @author Marko
  */
-
 public abstract class Command {
-DaoFactory factory;
-public DaoFactory getFactory(){
-    if(factory==null){
-    factory=DaoFactory.getInstance();
+
+    DaoFactory factory;
+
+    public DaoFactory getFactory() {//lazy initialization for daoFactory
+        if (factory == null) {
+            factory = DaoFactory.getInstance();
+        }
+        return factory;
     }
-    return factory;
-} 
 
     public abstract String execute(IRequestWrapper request) throws DAOLibraryException;
 

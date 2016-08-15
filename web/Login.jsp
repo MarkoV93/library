@@ -14,14 +14,14 @@
             <title><fmt:message key="authorization"/></title>
         </head>
         <body>
-
+            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
             <div class="container col-sm-12 col-md-12 col-lg-12">
                 <h1><fmt:message key="authorization" /></h1>
                 <fieldset>
-
+                    <!--form for login-->
                     <form action="login" method="post" class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-sm-4 col-md-4 col-lg-4">
                         <br>
                         ${message}

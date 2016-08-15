@@ -26,7 +26,7 @@ public class WievOldReservesCommand extends Command {
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         DaoFactory factory = this.getFactory();
         ReserveDao reserves = factory.getReserveDao();
-        List<Reserve> listReserves = reserves.getAllWievedRes();
+        List<Reserve> listReserves = reserves.getAllWievedRes();//get list of reserves with answer "returned" and "refused"
         request.setAttribute("reserves", listReserves);
         return "/WievOldReserves.jsp";
     }
