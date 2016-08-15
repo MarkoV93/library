@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Marko Command for adding books and returning puth on AddBook.jsp
+ * @author Marko Command for adding books and return puth on AddBook.jsp
  */
 public class AddBookCommand extends Command{
 
@@ -41,14 +41,14 @@ public class AddBookCommand extends Command{
             } else if (genre.equals("select")) {////if user not chouse genre in field genre on AddBook.jsp
                 request.setAttribute("message", labels.getString("selectGenreArea"));
             } else if(title.equals("")){
-                 request.setAttribute("message", labels.getString("putCurrentIntotitle"));
+                 request.setAttribute("message", labels.getString("putCurrentIntoQty"));
             } else if(author.equals("")){
-                 request.setAttribute("message", labels.getString("putCurrentIntoauthor"));
+                 request.setAttribute("message", labels.getString("putCurrentIntoQty"));
             }
              else{
                 if (books.getByCreteria(title) != null) {//if DB has row with the same title of  book ,add to qty
-                    int newQty = books.getByCreteria(title).getQty() + Integer.parseInt(qty);//add  to qty of book in DB qty from the form
-                    books.updateByCreteria(Integer.toString(newQty), title);//Updates values in a database
+                    int newQty = books.getByCreteria(title).getQty() + Integer.parseInt(qty);
+                    books.updateByCreteria(Integer.toString(newQty), title);
                 } else {//create book and insert in DB
                     Book book = new Book();
                     book.setTitle(title);
@@ -58,7 +58,7 @@ public class AddBookCommand extends Command{
 
                     books.create(book);
                 }
-                request.setAttribute("message", labels.getString("bookWasAdded"));//posting messages about adding book
+                request.setAttribute("message", labels.getString("bookWasAdded"));
             }
         }
         GenreDao genres = factory.getGenreDao();

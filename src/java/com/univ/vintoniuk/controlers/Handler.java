@@ -8,10 +8,7 @@ import com.univ.vintoniuk.command.CommandFactory;
 import com.univ.vintoniuk.dao.AbstractDao;
 import com.univ.vintoniuk.dao.DAOLibraryException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.Locale;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import java.util.logging.Level;
@@ -31,8 +28,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.LogManager;
 
 /**
- * Servlet which creates relevant command which return path in doPost method and
- * after that moves on this path in doGet method
+ * Servlet which creates relevant command which return path and after this moves
+ * on this path
  *
  * @author Marko
  */
@@ -42,28 +39,6 @@ public class Handler extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-    }
-//method for returning to user page and overloading pages 
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        HttpSession hs = request.getSession(true);
-        String path = (String) hs.getAttribute("path");//got path from session after excecuting of command in doPost method
-        Map<String, Object> atributes = (Map<String, Object>) hs.getAttribute("atrributes");//got all atributes of reqest in doPost method
-        IRequestWrapper wrapper = new RequestWrapper(request);
-        wrapper.setAttributesMap(atributes);//overwrite all attributes in request of doGet method
-        RequestDispatcher rd = request.getRequestDispatcher(path);
-        rd.forward(request, response);
-
-    }
-//for processing requests of the user ,seting atributes of request into  
-//HttpSession and  redirection on the  doGet method
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         HttpSession hs = request.getSession(true);
         IRequestWrapper wrapper = new RequestWrapper(request);//Wrapper for request which owerride only methods which we used
         Command handler = CommandFactory.getInstance().getCommand(request.getServletPath());//crate relevant command
@@ -72,14 +47,30 @@ public class Handler extends HttpServlet {
             path = handler.execute(wrapper);//execute revelant command
         } catch (DAOLibraryException ex) {
             logger.error("something wrong with exucute method", ex);
+           ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
+           request.setAttribute("errorMessage", ex);
             path = "/error.html";
         }
-        if (!request.getServletPath().equals("/changeLanguage") && !request.getServletPath().equals("/logOut")) {
-            hs.setAttribute("req", request.getServletPath());//remember in HttpSession last request for change languag command
+        if (!request.getServletPath().equals("/changeLanguage")&&!request.getServletPath().equals("/logOut")) {
+            hs.setAttribute("req", request.getServletPath());//remember in HttpSession last request for reloading if user change laungage
         }
-        hs.setAttribute("path", path);
-        hs.setAttribute("atrributes", wrapper.getAttributesMap());
-        response.sendRedirect("/Library" + hs.getAttribute("req"));//redirect in this servlet doGet method
+        RequestDispatcher rd = request.getRequestDispatcher(path);
+        rd.forward(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        processRequest(request, response);
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        processRequest(request, response);
 
     }
 

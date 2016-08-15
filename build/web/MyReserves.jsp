@@ -19,22 +19,20 @@
             <title><fmt:message key="myReserves"/></title>
         </head>
         <body>
-            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
-             <!--tag for showing active user reserves-->
             <myt:MyRes login="${login}"/>
             <h1><fmt:message key="myReserves"/></h1>
             ${message}
 
 
             <ul>
-                <!--table with active user reserves-->
                 <form action="myReserves" method="post">
                     <div class="col-sm-11 col-md-11 col-lg-11">
                         <table border="2" class="table table-hover">
                             <tr> <b>
+
                                 <td><fmt:message key="title"/> </td> 
                                 <td><fmt:message key="answer"/></td>
                                 <td><fmt:message key="date"/></td>
@@ -43,6 +41,8 @@
                             </tr>
                             <c:forEach var="reserve" items="${requestScope.reserves}">
                                 <tr>
+
+
                                     <td>${reserve.book.title} </td> 
                                     <td>${reserve.answer.answer}</td>
                                     <td>${reserve.date}</td>
@@ -52,7 +52,6 @@
                             </form>
 
                             </ul>
-                                    <!--user menu buttons-->
                             <form action="login" method="post">
                                 <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="backToUserPage"/></button>
                             </form>

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Command for loging out from accaunt and return puth on "Login.jsp"
+ *
  * @author Marko
  */
 public class LogOutCommand extends Command {
@@ -23,9 +24,9 @@ public class LogOutCommand extends Command {
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         HttpSession hs = request.getSession(true);
         ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
-        request.setAttribute("message", labels.getString("logOutFrom"));//Send message for user about logging out from accaunt
-         hs.setAttribute("req", "/login");
-        hs.removeAttribute("login");//deleted attribute "login" from  HttpSession
+        request.setAttribute("message", labels.getString("logOutFrom"));
+        hs.invalidate();
+
         return "/Login.jsp";
     }
 

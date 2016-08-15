@@ -19,7 +19,7 @@ import com.univ.vintoniuk.model.Reserve;
 
 /**
  *
- * Class for wieving old reserves of user 
+ * Class for wieving old reserves by user 
  */
 public class MyOldReservesCommand extends Command {
 
@@ -28,7 +28,7 @@ public class MyOldReservesCommand extends Command {
         DaoFactory factory = this.getFactory();
         ReserveDao reserves = factory.getReserveDao();
         HttpSession hs = request.getSession(true);
-        List<Reserve> listReserves = reserves.getAllOldResByLogin((String) hs.getAttribute("login"));//getting all reserves of user with login-"login" which returned or refused
+        List<Reserve> listReserves = reserves.getAllOldResByLogin((String) hs.getAttribute("login"));
         request.setAttribute("reserves", listReserves);
         return "/MyOldReserves.jsp";
     }

@@ -38,15 +38,15 @@ public class ReserveCommand extends Command {
         BookDao books = factory.getBookDao();
         UserDao users = factory.getUserDao();
         String userLogin = (String) hs.getAttribute("login");
-        String action = request.getParameter("act");//Reads parameter from field action on the Reserve.jsp
-        String titleBook = request.getParameter("title");////Reads parameter from field action on the Finding.jsp
+        String action = request.getParameter("act");
+        String titleBook = request.getParameter("title");
+        //    if (titleBook != null) {//if someone press reserwe and on a finding form
         if (titleBook != null && books.getByCreteria(titleBook) != null) {//if there is book in DB with the same title
             hs.setAttribute("titleBookforReserve", titleBook);//set in session title of book for reserve
             Book book = books.getByCreteria(titleBook);
             request.setAttribute("book", book);
-            return "/CreateReserve.jsp";//go to create reserve in CreateReserve.jsp
-        } else if (titleBookForRes != null && action == null && titleBook == null) {//if user did not choose variant 
-            //where he want to take book ,then print message about this and overload page
+            return "/CreateReserve.jsp";
+        } else if (titleBookForRes != null && action == null && titleBook == null) {//if user did not choose variant where he want to take book ,then print message about this and overload page
             Book book = books.getByCreteria(titleBookForRes);
             request.setAttribute("message", labels.getString("chouseAction"));
             request.setAttribute("book", book);

@@ -19,8 +19,9 @@
             <title><fmt:message key="newReserves"/></title>
 
         </head>
+
+
         <body>
-            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
@@ -28,7 +29,6 @@
             <h1><fmt:message key="newReserves"/></h1>
             ${message}
             <ul>
-                <!--table with active reserves-->
                 <div class="col-sm-11 col-md-11 col-lg-11">
                     <table border="2"  class="table  table-hover  ">
                         <tr> <b>
@@ -36,7 +36,7 @@
                             <td><fmt:message key="userLogin"/></td> 
                             <td><fmt:message key="bookTitle"/></td> 
                             <td><fmt:message key="answer"/></td>
-                            <td><fmt:message key="date"/></td>
+                             <td><fmt:message key="date"/></td>
                         </b>
                         </tr>
                         <c:forEach var="reserve" items="${requestScope.reserves}">
@@ -53,7 +53,6 @@
                             </tr>
                             </tr>
                         </c:forEach>
-                        <!--admin menu buttons-->
                         <form action="login" method="post">
                             <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="backToUserPage"/></button>
                         </form>
@@ -73,6 +72,9 @@
                             <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="logOut"/></button>
                         </form>
                         </ul> 
+
+
+
                         </body>
                         </html>
                     </fmt:bundle>

@@ -23,65 +23,70 @@
 
 
         <body>
-            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
-            <!--tag for showing active user reserves-->
             <myt:MyRes login="${login}"/>
             <h1><fmt:message key="reserve"/></h1>
-            <!--user menu buttons-->
-            <form action="login" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
-                <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="backToUserPage"/></button>
-            </form>
-            <form action="myOldReserves" method="post"  class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
-                <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="myOldReserves"/></button>
-            </form> 
-            <form action="finding" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
-                <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="findAndReserve"/></button>
-            </form>
+          <form action="login" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
+                    <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="backToUserPage"/></button>
+                </form>
+           
+            
+                <form action="myOldReserves" method="post"  class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
+                    <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="myOldReserves"/></button>
+                </form>
+          
+           
+                <form action="finding" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
+                    <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="findAndReserve"/></button>
+                </form>
+            
+        
+        
             <form action="myReserves" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
                 <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="myRreserves"/></button>
-            </form>  
+            </form>
+       
+       
             <form action="logOut" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
                 <button type="submit" class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="logOut"/></button>
             </form>
             <br>
             <br>
-            <!--field for choice action-->
             <fieldset class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                ${message}
-                <form action="reserve" method="post" class="radio">
-                    <input type="radio" name="act" value="wiev for give to hend"><fmt:message key="getByHend"/><br>
-                    <input type="radio" name="act" value="wiev for give to reading room"><fmt:message key="getInReadingRoom"/><br>
-                    <br>
-                    <button value="Reserve" name="Reserve" type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="reserve"/></button>
-                </form>
+                            ${message}
+                            <form action="reserve" method="post" class="radio">
+                                <input type="radio" name="act" value="wiev for give to hend"><fmt:message key="getByHend"/><br>
+                                <input type="radio" name="act" value="wiev for give to reading room"><fmt:message key="getInReadingRoom"/><br>
+                                <br>
+                                <button value="Reserve" name="Reserve" type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="reserve"/></button>
+                            </form>
 
-            </fieldset>
+                        </fieldset>
 
-            <ul>
-                <!--table with the book for reseerve -->
-                <table border="2" class="table table-hover">
-                    <tr > <b>
-                        <td> <fmt:message key="title"/> </td> 
-                        <td> <fmt:message key="author"/></td> 
-                        <td> <fmt:message key="genre"/> </td> 
-                        <td>  <fmt:message key="qty"/> </td>
-                    </b>
-                    </tr>
-                    <tr>
-                        <td>     ${book.title} </td> 
-                        <td>     ${book.author}</td> 
-                        <td>     ${book.genre.genre} </td> 
-                        <td>     ${book.qty} </td>
-                    </tr>
-                    <br>
+                <ul>
+
+                    <table border="2" class="table table-hover">
+                        <tr > <b>
+                            <td> <fmt:message key="title"/> </td> 
+                            <td> <fmt:message key="author"/></td> 
+                            <td> <fmt:message key="genre"/> </td> 
+                            <td>  <fmt:message key="qty"/> </td>
+                        </b>
+                        </tr>
+                        <tr>
+                            <td>     ${book.title} </td> 
+                            <td>     ${book.author}</td> 
+                            <td>     ${book.genre.genre} </td> 
+                            <td>     ${book.qty} </td>
+                        </tr>
+                        <br>
+                     
 
 
-
-                    </ul>
-
-                    </body>
-                    </html>
-                </fmt:bundle>
+                </ul>
+         
+        </body>
+    </html>
+</fmt:bundle>

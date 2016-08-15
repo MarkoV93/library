@@ -29,25 +29,18 @@ public class BadRequestFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        String path;
-        //  String path = ((HttpServletRequest) request).getRequestURI();
+        String path = ((HttpServletRequest) request).getRequestURI();
         HttpSession hs = ((HttpServletRequest) request).getSession();
-        path = "/Library"+(String) hs.getAttribute("path");
-        if (hs.getAttribute("path") == null) {
-            path = ((HttpServletRequest) request).getRequestURI();
-        }
         String login = (String) hs.getAttribute("login");
-        System.out.println(login + " fdfdffffffffffff " + path);
-        if (path.equals("/Library/RegistrationJSP.jsp")
-                || path.equals("/Library/Login.jsp")
-                || path.equals("/Library/css/style.css")
-                || path.equals("/Library/css/bootstrap.min.css")
-                || path.equals("/Library/index.html")
-                || path.equals("/Library/")
-                || path.equals("/Library/login")
-                || path.equals("/Library/changeLanguage")
-                || path.equals("/Library/logOut")
-                || path.equals("/Library/registration") || hs.getAttribute("login") != null) {
+        if (path.equals("/Autorithation/RegistrationJSP.jsp")
+                || path.equals("/Autorithation/Login.jsp")
+                || path.equals("/Autorithation/css/style.css")
+                || path.equals("/Autorithation/css/bootstrap.min.css")
+                || path.equals("/Autorithation/index.html")
+                || path.equals("/Autorithation/")
+                || path.equals("/Autorithation/login")
+                || path.equals("/Autorithation/changeLanguage")
+                || path.equals("/Autorithation/registration") || hs.getAttribute("login") != null) {
             chain.doFilter(request, response);
         } else {
             RequestDispatcher rd = ((HttpServletRequest) request).getRequestDispatcher("/error.html");

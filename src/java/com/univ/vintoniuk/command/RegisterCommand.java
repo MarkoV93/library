@@ -43,12 +43,13 @@ public class RegisterCommand extends Command {
                 u.setPassword(passwordUser);
                 u.setIsAdmin(false);
                 users.create(u);
-                return "/Login.jsp";//if user created, return to handler Login.jsp
+                return "/Login.jsp";//if user created, then go to Login.jsp
             } else {            //if one of the field is empty then display a message and overload page
                 String message = labels.getString("fillRegisterField");
                 request.setAttribute("message", message);
             }
         }
+
         return "/RegistrationJSP.jsp";
     }
 }

@@ -48,11 +48,11 @@ public class AdminUserSecurityFilter implements Filter {
                 Logger.getLogger(AdminUserSecurityFilter.class.getName()).log(Level.SEVERE, null, ex);
             }
        if(user.isIsAdmin()){  
-        if ( path.equals("/Library/finding")
-                || path.equals("/Library/reserve")
-                || path.equals("/Library/myReserves")
-                || path.equals("/Library/myOldReserves")
-                // || path.equals("/Library/goToFind")
+        if ( path.equals("/Autorithation/finding")
+                || path.equals("/Autorithation/reserve")
+                || path.equals("/Autorithation/myReserves")
+                || path.equals("/Autorithation/myOldReserves")
+                 || path.equals("/goToFind")
                ) {
              RequestDispatcher rd = ((HttpServletRequest) request).getRequestDispatcher("/error.html");
             rd.forward(request, response);            
@@ -60,10 +60,10 @@ public class AdminUserSecurityFilter implements Filter {
            chain.doFilter(request, response);
         }
         } else{
-            if (path.equals("/Library/returnBook")
-                || path.equals("/Library/wievOldReserves")
-                || path.equals("/Library/wievReserves")
-                || path.equals("/Library/addBook")) {
+            if (path.equals("/Autorithation/returnBook")
+                || path.equals("/Autorithation/wievOldReserves")
+                || path.equals("/Autorithation/wievReserves")
+                || path.equals("/Autorithation/addBook")) {
            RequestDispatcher rd = ((HttpServletRequest) request).getRequestDispatcher("/error.html");
             rd.forward(request, response);            
         }else {
