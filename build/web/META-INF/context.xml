@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Autorithation">
+<Resource name="jdbc/dbconnect" auth="Container"
+type="javax.sql.DataSource" maxTotal="100" 
+maxIdle="30" maxWaitMilis="10000"
+username="root" 
+password="vfhrj270893"
+driverClassName="com.mysql.jdbc.Driver"
+url="jdbc:mysql://127.0.0.1/library"/>    
+</Context>
