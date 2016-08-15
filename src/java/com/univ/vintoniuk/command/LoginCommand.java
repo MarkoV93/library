@@ -43,7 +43,6 @@ public class LoginCommand extends Command {
         }
         DaoFactory factory = this.getFactory();
         UserDao users = factory.getUserDao();
-        DaoFactory factoryb = DaoFactory.getInstance();
         BookDao books = factory.getBookDao();
         List<Book> listBooks = books.getAll();
         if (hs.getAttribute("login") != null) {//if there is active session with field "login"

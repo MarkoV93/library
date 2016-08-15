@@ -18,12 +18,14 @@
             <title>JSP Page</title>
         </head>
         <body>
+            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
             <h1><fmt:message key="activeReserves"/></h1>
             ${message}
             <ul>
+                  <!--table with active reserves-->
                 <div class="col-sm-11 col-md-11 col-lg-11">
                     <table border="2"  class="table  table-hover  ">
                         <tr> <b>
@@ -34,7 +36,6 @@
                             <td></td>
                         </b>
                         </tr>
-
                         <c:forEach var="reserve" items="${requestScope.reserves}">
                             <tr>
                                 <td>${reserve.user.login}</td> 
@@ -49,6 +50,7 @@
 
 
                         </ul>
+                            <!--admin menu buttons-->
                         <form action="login" method="post">
                             <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="backToUserPage"/></button>
                         </form>

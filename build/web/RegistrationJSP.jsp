@@ -14,6 +14,7 @@
             <title><fmt:message key="registration"/></title>
         </head>
         <body>
+            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
@@ -22,6 +23,7 @@
                 <fieldset>
                      ${message}
                      <br>
+                      <!--form for registration-->
                     <form action="registration" method="post" class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-sm-4 col-md-4 col-lg-4">
                         <fmt:message key="firstName"/><input type="text" class="form-control" name="firstName"/>
                         <br>

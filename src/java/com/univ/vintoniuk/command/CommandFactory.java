@@ -30,14 +30,13 @@ public class CommandFactory {
         commandMap = new HashMap<>();
     }
 
-    //method which crate command and put it into Map commandMap
+    //method which crate command by reflactions and put it into Map commandMap
     private Command createNewCommand(String requestPath) {
         try {
             labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
             Class commandClass = Class.forName(labels.getString(requestPath));
             Command command = (Command) commandClass.newInstance();
             commandMap.put(requestPath, command);
-
         } catch (InstantiationException ex) {
             logger.error("something wrong with createNewCommand method", ex);
         } catch (IllegalAccessException ex) {
@@ -47,23 +46,21 @@ public class CommandFactory {
         }
         return commandMap.get(requestPath);
     }
-    
+
 //lazy initialization for CommandFactory 
     public static synchronized CommandFactory getInstance() {
         if (instance == null) {
-
             instance = new CommandFactory();
-
         }
         return instance;
     }
-    
+
 //lazy initialization for Commands 
     public Command getCommand(String requestPath) {
         if (commandMap.containsKey(requestPath)) {
-            return commandMap.get(requestPath);
+            return commandMap.get(requestPath);//return the appropriate command from the map if it contains there
         } else {
-            return createNewCommand(requestPath);//method which crate command and put it into Map commandMap
+            return createNewCommand(requestPath);//method which crate command by reflections and put it into Map commandMap
         }
 
     }

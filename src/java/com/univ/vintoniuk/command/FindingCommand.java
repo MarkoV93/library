@@ -25,7 +25,7 @@ public class FindingCommand extends Command {
      *
      * @author Marko Command for finding books by genre or by author or by title
      * return puth on
-     * Finding.jsp,BooksByAuthor.jsp,BooksByGenre.jsp,CreateReserve.jsp
+     * Finding.jsp,BooksByAuthor.jsp,BooksByGenre.jsp
      */
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
@@ -46,12 +46,11 @@ public class FindingCommand extends Command {
             request.setAttribute("author", authorBook);
             return "/BooksByAuthor.jsp";
         } else {
-            List<String> listAuthors = books.getAuthorsOfBooks();
+            List<String> listAuthors = books.getAuthorsOfBooks();//if user press button  "find and reserve"
             request.setAttribute("authors", listAuthors);
             GenreDao genres = factory.getGenreDao();
             List<Genre> listGenres = genres.getAll();
             request.setAttribute("genres", listGenres);
-
             return "/Finding.jsp";
         }
     }

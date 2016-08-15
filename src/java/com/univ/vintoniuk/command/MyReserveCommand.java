@@ -19,8 +19,7 @@ import com.univ.vintoniuk.model.Reserve;
 
 /**
  *
- * @author Marko
- * Class for watching personal user reserves, and cenceling  reserves for wieving  
+ * @author Class for viewing individual user accounts, as well as cancellation reserves, which are reviewed
  * @Return "/MyReserves.jsp"
  */
 public class MyReserveCommand extends Command {
@@ -33,12 +32,12 @@ public class MyReserveCommand extends Command {
         if (request.getParameter("censelId") != null) {//if user press button "cencel Reserve" 
             ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
             String id = request.getParameter("censelId");
-          String answer=  reserves.getByCreteria(id).getAnswer().getAnswer();
+            String answer = reserves.getByCreteria(id).getAnswer().getAnswer();
             if (answer.equals("wiev for give to reading room") || answer.equals("wiev for give to hend")) {
-                //if reserve did not wiev then reserve cencel
+                //if reserve did not view then reserve cencel
                 request.setAttribute("message", labels.getString("reserveCenseled"));
                 reserves.updateByCreteria("refused", id);
-            } else { //if reserve waived , display message about impossibility of action
+            } else { //if reserve viewed  display message about impossibility of action
                 request.setAttribute("message", labels.getString("reserweWasViewed"));
             }
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Autorithation">
+<Context path="/Library">
 <Resource name="jdbc/dbconnect" auth="Container"
 type="javax.sql.DataSource" maxTotal="100" 
 maxIdle="30" maxWaitMilis="10000"

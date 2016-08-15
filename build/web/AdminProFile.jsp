@@ -15,12 +15,14 @@
             <title>Admin Page</title>
         </head>
         <body>
+            <!--button for change language-->
             <form action="changeLanguage" method="post">       
                 <button type="submit" class="btn btn-primary "><fmt:message key="changeLanguage"/></button>
             </form>
 
             <h1>${sessionScope.login}<fmt:message key="adminPage"/></h1>
             <ul>
+                  <!--table with all books in library-->
                 <div class="col-sm-11 col-md-11 col-lg-11">
                     <table border="2"  class="table  table-hover  ">
                         <tr> <b>
@@ -39,6 +41,7 @@
                             </tr>
                         </c:forEach>
                         </ul>
+                         <!--admin menu buttons-->
                         <form action="login" method="post">
                             <button type="submit" class="btn btn-primary col-sm-2 col-md-2 col-lg-2"><fmt:message key="backToUserPage"/></button>
                         </form>

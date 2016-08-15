@@ -14,7 +14,7 @@
     <html>
 
         <head>
-            <!--<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />-->
+            <!---->
             <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" type="text/css" />
             <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,12 +22,13 @@
         </head>
 
         <body>
-
+<!--button for change language-->
             <form action="changeLanguage" method="post" style="display: inline-block">       
                 <button type="submit" class="btn btn-primary"><fmt:message key="changeLanguage"/></button>
             </form>
 
             <h1><fmt:message key="addBook"/></h1>
+            <!--admin menu buttons-->
             <form action="login" method="post" class="col-sm-2 col-md-2 col-lg-2" style="float:left; padding:0;">
                 <button type="submit"class="btn btn-primary col-sm-12 col-md-12 col-lg-12"><fmt:message key="backToUserPage"/></button>
             </form>
@@ -53,6 +54,7 @@
             <br> ${message}
             <br>
             <div>
+                <!--form with fields for adding books-->
                 <form action="addBook" method="post" class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-sm-4 col-md-4 col-lg-4">
                     <fmt:message key="title"/><input type="text" class="form-control" name="title"/>
                     <br>
@@ -73,6 +75,7 @@
 
             </div>				
             <br>
+            <!--table with all books in library-->
             <div class="col-sm-11 col-md-11 col-lg-11">
                 <table border="2"  class="table  table-hover  ">
                     <tr> <b>

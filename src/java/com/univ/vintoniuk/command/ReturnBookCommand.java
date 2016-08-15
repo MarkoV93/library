@@ -35,7 +35,7 @@ public class ReturnBookCommand extends Command {
             ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
             String id = request.getParameter("returnId");//get id of reserve
             Reserve reserve = reserves.getByCreteria(id);
-            reserves.updateByCreteria("returned", id);//change reserve status on "returned
+            reserves.updateByCreteria("returned", id);//change reserve status on "returned"
             request.setAttribute("message", labels.getString("bookWasReturned"));
             Book book = reserve.getBook();
             books.updateByCreteria(Integer.toString(book.getQty() + 1), book.getTitle());//add to 1 to quantity of this in DB
