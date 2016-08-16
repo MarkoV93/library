@@ -32,6 +32,7 @@
                             <td> <fmt:message key="author"/></td> 
                             <td> <fmt:message key="genre"/> </td> 
                             <td>  <fmt:message key="qty"/> </td>
+                            <td></td>
                         </b>
                         </tr>
                         <c:forEach var="book" items="${requestScope.books}">
@@ -40,6 +41,9 @@
                                 <td>     ${book.author}</td> 
                                 <td>     ${book.genre.genre} </td> 
                                 <td>     ${book.qty} </td>
+                            <form action="reserve" method="post">
+                                <td><button class="btn btn-primary" value="${book.title}" name="title" type="submit" class="btn btn-default"><fmt:message key="reserve"/></button></p></td>
+                            </form>
                             </tr>
                         </c:forEach>
                         </ul>

@@ -19,16 +19,16 @@ import static org.mockito.Mockito.when;
  * @author Marko
  */
 public class ChangeLaungageCommandTest {
+
     @Test
-    public void exucute() throws DAOLibraryException{
-       IRequestWrapper   rw = mock(IRequestWrapper.class);
-       HttpSession  session = mock(HttpSession.class);
+    public void exucute() throws DAOLibraryException {
+        IRequestWrapper rw = mock(IRequestWrapper.class);
+        HttpSession session = mock(HttpSession.class);
         when(rw.getSession(true)).thenReturn(session);
         when(session.getAttribute("req")).thenReturn("/logOut");
-        ChangeLanguageCommand clc=new ChangeLanguageCommand();
+        ChangeLanguageCommand clc = new ChangeLanguageCommand();
+        String path = clc.execute(rw);
+        Assert.assertEquals(path, "/Login.jsp");
 
-        String path=clc.execute(rw);
-          Assert.assertEquals(path, "/Login.jsp");
-         
     }
 }

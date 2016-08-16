@@ -15,14 +15,16 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Marko  Command for change language and awerloading page
+ * @author Marko Command for change language and awerloading page
  */
 public class ChangeLanguageCommand extends Command {
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         HttpSession hs = request.getSession(true);
-        Locale newLocale;  
+        String req = (String) hs.getAttribute("req");//read from HttpSession last request, for owerloading page
+        Command handler = CommandFactory.getInstance().getCommand(req);//crate relevant command
+        Locale newLocale;
         String path = null;
         Locale locale = Locale.getDefault();
         if (locale.getLanguage().equals("en")) {//invert locale
@@ -31,12 +33,13 @@ public class ChangeLanguageCommand extends Command {
             hs.setAttribute("locale", newLocale);
 
         } else {//invert locale
-             newLocale = new Locale("en", "US");
+            newLocale = new Locale("en", "US");
             Locale.setDefault(newLocale);
             hs.setAttribute("locale", newLocale);
         }
-        request.setAttributesMap((Map<String, Object>) hs.getAttribute("atrributes"));//replaced attributes of request from the previous request
-        return (String)hs.getAttribute("path");//return privious path
+        path = handler.execute(request);//
+      //  request.setAttributesMap((Map<String, Object>) hs.getAttribute("atrributes"));//replaced attributes of request from the previous request
+        return path;//return privious path
     }
 
 }

@@ -82,7 +82,7 @@ public class ReserveDaoTest {
     DataSource ds = mock( DataSource.class);
     ReserveDao reserves=new ReserveDao(ds);
      when(ds.getConnection()).thenReturn(con);
-    List<Reserve> reserveList= reserves. getAllOldResByLogin("vova");
+    List<Reserve> reserveList= reserves. getAllOldResByLogin("user");
      Assert.assertTrue(reserveList.size()>0);
 }
    
@@ -92,7 +92,7 @@ public class ReserveDaoTest {
     DataSource ds = mock( DataSource.class);
     ReserveDao reserves=new ReserveDao(ds);
      when(ds.getConnection()).thenReturn(con);
-   Reserve reserve= reserves. getByCreteria("5");
+   Reserve reserve= reserves. getByCreteria("109");
      Assert.assertNotNull(reserve);
 }
    
