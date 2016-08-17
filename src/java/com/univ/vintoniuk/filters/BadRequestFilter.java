@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -30,14 +32,9 @@ public class BadRequestFilter implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
         String path;
-        //  String path = ((HttpServletRequest) request).getRequestURI();
         HttpSession hs = ((HttpServletRequest) request).getSession();
-        path = "/Library"+(String) hs.getAttribute("path");
-        if (hs.getAttribute("path") == null) {
-            path = ((HttpServletRequest) request).getRequestURI();
-        }
+        path = ((HttpServletRequest) request).getRequestURI();
         String login = (String) hs.getAttribute("login");
-        System.out.println(login + " fdfdffffffffffff " + path);
         if (path.equals("/Library/RegistrationJSP.jsp")
                 || path.equals("/Library/Login.jsp")
                 || path.equals("/Library/css/style.css")
@@ -50,7 +47,9 @@ public class BadRequestFilter implements Filter {
                 || path.equals("/Library/registration") || hs.getAttribute("login") != null) {
             chain.doFilter(request, response);
         } else {
-            RequestDispatcher rd = ((HttpServletRequest) request).getRequestDispatcher("/error.html");
+             ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
+            RequestDispatcher rd = ((HttpServletRequest) request).getRequestDispatcher("/error.jsp");
+            request.setAttribute("errorMessage", labels.getString("youCanNotGoTo"));
             rd.forward(request, response);
         }
 

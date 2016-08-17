@@ -24,10 +24,9 @@ import com.univ.vintoniuk.model.Reserve;
 import com.univ.vintoniuk.model.User;
 
 /**
- *
  * @author Marko Class for creating new reserve by user
  */
-public class ReserveCommand extends Command {
+public class ReserveCommand extends Command implements UserCommand{
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
@@ -75,5 +74,4 @@ public class ReserveCommand extends Command {
             return "/Finding.jsp";
         }
     }
-
 }

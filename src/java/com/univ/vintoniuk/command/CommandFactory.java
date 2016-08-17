@@ -33,6 +33,7 @@ public class CommandFactory {
     //method which crate command by reflactions and put it into Map commandMap
     private Command createNewCommand(String requestPath) {
         try {
+         //   System.out.println(requestPath);
             labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
             Class commandClass = Class.forName(labels.getString(requestPath));
             Command command = (Command) commandClass.newInstance();

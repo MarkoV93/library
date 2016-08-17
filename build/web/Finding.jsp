@@ -63,7 +63,7 @@
                         <select name="genre"  class="form-control" size="1">
                             <option selected value="celect"> <fmt:message key="selectGenreOfBook"/>
                                 <c:forEach var="genre" items="${requestScope.genres}">
-                                <option value=${genre.genre}>${genre.genre}
+                                <option value="${genre.genre}">${genre.genre}
                                 </c:forEach>
                         </select><br>
                         <button value="Find by genre" name="Find by genre" type="submit" class="btn btn-primary  btn-lg btn-block"><fmt:message key="findByGenre"/></button>

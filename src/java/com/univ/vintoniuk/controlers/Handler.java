@@ -49,14 +49,18 @@ public class Handler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession hs = request.getSession(true);
-        String path = (String) hs.getAttribute("path");//got path from session after excecuting of command in doPost method
-        Map<String, Object> atributes = (Map<String, Object>) hs.getAttribute("atrributes");//got all atributes of reqest in doPost method
-        IRequestWrapper wrapper = new RequestWrapper(request);
-        wrapper.setAttributesMap(atributes);//overwrite all attributes in request of doGet method
-        RequestDispatcher rd = request.getRequestDispatcher(path);
-        rd.forward(request, response);
 
+        HttpSession hs = request.getSession(true);
+        if (!request.getServletPath().equals((String) hs.getAttribute("req"))) {//if user wrote into address field address of another action
+            doPost(request, response);
+        } else {
+            String path = (String) hs.getAttribute("path");//got path from session after excecuting of command in doPost method
+            Map<String, Object> atributes = (Map<String, Object>) hs.getAttribute("atrributes");//got all atributes of reqest in doPost method
+            IRequestWrapper wrapper = new RequestWrapper(request);
+            wrapper.setAttributesMap(atributes);//overwrite all attributes in request of doGet method
+            RequestDispatcher rd = request.getRequestDispatcher(path);
+            rd.forward(request, response);
+        }
     }
 //for processing requests of the user ,seting atributes of request into  
 //HttpSession and  redirection on the  doGet method
@@ -72,7 +76,7 @@ public class Handler extends HttpServlet {
             path = handler.execute(wrapper);//execute revelant command
         } catch (DAOLibraryException ex) {
             logger.error("something wrong with exucute method", ex);
-            path = "/error.html";
+            path = "/error.jsp";
         }
         if (!request.getServletPath().equals("/changeLanguage") && !request.getServletPath().equals("/logOut")) {
             hs.setAttribute("req", request.getServletPath());//remember in HttpSession last request for change languag command

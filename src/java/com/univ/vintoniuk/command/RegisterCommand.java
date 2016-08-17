@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.univ.vintoniuk.model.User;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
 /**
  *
  * Class for Registration new user
@@ -33,9 +34,12 @@ public class RegisterCommand extends Command {
         DaoFactory factory = this.getFactory();
         UserDao users = factory.getUserDao();
         ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
-        if (request.getParameter("Registration") != null && users.getByCreteria(loginUser) == null && firstNameUser != null && loginUser != null && passwordUser != null && lastNameUser != null) {
-            //If user press button "Registration" on Registration.jsp and there is no one user with the same login
-            if (!loginUser.equals("") && !passwordUser.equals("") && !firstNameUser.equals("") && !lastNameUser.equals("")) {//if oll field is not empty
+        if (request.getParameter("Registration") != null && firstNameUser != null && loginUser != null && passwordUser != null && lastNameUser != null) {
+            if (users.getByCreteria(loginUser) != null) {
+                String message = labels.getString("thereIsUserWithTheSameLogin");
+                request.setAttribute("message", message);
+                //If user press button "Registration" on Registration.jsp and there is no one user with the same login
+            } else if (!loginUser.equals("") && !passwordUser.equals("") && !firstNameUser.equals("") && !lastNameUser.equals("")) {//if oll field is not empty
                 User u = new User();
                 u.setFirstName(firstNameUser);
                 u.setLastName(lastNameUser);

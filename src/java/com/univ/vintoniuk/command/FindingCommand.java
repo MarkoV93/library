@@ -18,15 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.univ.vintoniuk.model.Book;
 import com.univ.vintoniuk.model.Genre;
-
-public class FindingCommand extends Command {
-
-    /**
-     *
+/*
      * @author Marko Command for finding books by genre or by author or by title
      * return puth on
      * Finding.jsp,BooksByAuthor.jsp,BooksByGenre.jsp
      */
+public class FindingCommand extends Command implements UserCommand{
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         String titleBook = request.getParameter("title");

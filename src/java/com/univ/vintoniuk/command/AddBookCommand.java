@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Marko Command for adding books and returning puth on AddBook.jsp
  */
-public class AddBookCommand extends Command{
+public class AddBookCommand extends Command implements AdminCommand{
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {

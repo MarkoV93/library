@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.sql.DataSource;
 import org.junit.After;
 import org.junit.Assert;
@@ -23,25 +25,29 @@ import static org.mockito.Mockito.when;
  * @author Marko
  */
 public class GenreDaoTest {
-     Connection con;
-    
-    @Before 
-    public void getConnection() throws ClassNotFoundException, SQLException{
+
+    Connection con;
+
+    @Before
+    public void getConnection() throws ClassNotFoundException, SQLException {
+        ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", Locale.getDefault());
         Class.forName("com.mysql.jdbc.Driver");
-  String url="jdbc:mysql://127.0.0.1:3306/library";
- con=DriverManager.getConnection(url,"root","vfhrj270893"); 
+        String url = "jdbc:mysql://127.0.0.1:3306/library";
+        con = DriverManager.getConnection(url, "root", labels.getString("passwordToDB"));
     }
-     @After
+
+    @After
     public void closeConnection() throws SQLException {
         con.close();
     }
-     @Test
-  public  void getAll() throws DAOLibraryException, ClassNotFoundException, SQLException {
-         
-    DataSource ds = mock( DataSource.class);
-    GenreDao genres=new GenreDao(ds);
-     when(ds.getConnection()).thenReturn(con);
-    List<Genre> genreList= genres.getAll();
-     Assert.assertNotNull(genreList);
+
+    @Test
+    public void getAll() throws DAOLibraryException, ClassNotFoundException, SQLException {
+
+        DataSource ds = mock(DataSource.class);
+        GenreDao genres = new GenreDao(ds);
+        when(ds.getConnection()).thenReturn(con);
+        List<Genre> genreList = genres.getAll();
+        Assert.assertNotNull(genreList);
     }
 }

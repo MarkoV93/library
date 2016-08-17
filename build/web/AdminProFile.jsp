@@ -20,7 +20,7 @@
                 <button type="submit" class="btn btn-primary "><fmt:message key="changeLanguage"/></button>
             </form>
 
-            <h1>${sessionScope.login}<fmt:message key="adminPage"/></h1>
+            <h1><fmt:message key="adminPage"/> ${sessionScope.login}</h1>
             <ul>
                   <!--table with all books in library-->
                 <div class="col-sm-11 col-md-11 col-lg-11">

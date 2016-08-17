@@ -25,7 +25,7 @@ import com.univ.vintoniuk.model.Reserve;
  * class for returning books by admin
  * @return "/ReturnBook.jsp"
  */
-public class ReturnBookCommand extends Command {
+public class ReturnBookCommand extends Command implements AdminCommand{
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
         DaoFactory factory = this.getFactory();

@@ -18,11 +18,10 @@ import javax.servlet.http.HttpSession;
 import com.univ.vintoniuk.model.Reserve;
 
 /**
- *
  * @author Class for viewing individual user accounts, as well as cancellation reserves, which are reviewed
  * @Return "/MyReserves.jsp"
  */
-public class MyReserveCommand extends Command {
+public class MyReserveCommand extends Command implements UserCommand{
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
@@ -33,8 +32,7 @@ public class MyReserveCommand extends Command {
             ResourceBundle labels = ResourceBundle.getBundle("com.univ.vintoniuk.properties.text", (Locale) hs.getAttribute("locale"));
             String id = request.getParameter("censelId");
             String answer = reserves.getByCreteria(id).getAnswer().getAnswer();
-            if (answer.equals("wiev for give to reading room") || answer.equals("wiev for give to hend")) {
-                //if reserve did not view then reserve cencel
+            if (answer.equals("wiev for give to reading room") || answer.equals("wiev for give to hend")) {  //if reserve did not view then reserve cencel             
                 request.setAttribute("message", labels.getString("reserveCenseled"));
                 reserves.updateByCreteria("refused", id);
             } else { //if reserve viewed  display message about impossibility of action

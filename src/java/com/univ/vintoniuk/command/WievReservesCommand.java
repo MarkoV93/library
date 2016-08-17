@@ -22,12 +22,11 @@ import com.univ.vintoniuk.model.Genre;
 import com.univ.vintoniuk.model.Reserve;
 
 /**
- *
  * @author Marko Class for wieving reserves with status "wiev for give to hend"
  * and "wiev for give to reading room" and change them by admin
  * @return ""WievReserves.jsp""
  */
-public class WievReservesCommand extends Command {
+public class WievReservesCommand extends Command implements AdminCommand{
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
@@ -59,7 +58,6 @@ public class WievReservesCommand extends Command {
                 }
                 books.updateByCreteria(Integer.toString(book.getQty() - 1), book.getTitle());//quantity decreases by 1
             }
-
         }
         List<Reserve> listReserves = reserves.getAllWievingRes();
         request.setAttribute("reserves", listReserves);

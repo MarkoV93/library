@@ -21,7 +21,7 @@ import com.univ.vintoniuk.model.Reserve;
  *
  * Class for wieving old reserves of user 
  */
-public class MyOldReservesCommand extends Command {
+public class MyOldReservesCommand extends Command implements UserCommand{
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {

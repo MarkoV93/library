@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Marko-ПК" name="com.univ.vintoniuk.command.ReturnBookCommandTest" skipped="0" tests="2" time="0.483" timestamp="2016-08-16T11:12:28">
+<testsuite errors="0" failures="0" hostname="Marko-ПК" name="com.univ.vintoniuk.command.ReturnBookCommandTest" skipped="0" tests="2" time="0.739" timestamp="2016-08-17T20:11:13">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="UA" />
@@ -65,7 +65,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.univ.vintoniuk.command.ReturnBookCommandTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Marko\Documents\NetBeansProjects\Library\build\test\results\TEST-com.univ.vintoniuk.command.ReturnBookCommandTest.xml crashfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junitvmwatcher2645203292766093394.properties propsfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junit4227274984138093355.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.univ.vintoniuk.command.ReturnBookCommandTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Marko\Documents\NetBeansProjects\Library\build\test\results\TEST-com.univ.vintoniuk.command.ReturnBookCommandTest.xml crashfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junitvmwatcher7936107288862266555.properties propsfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junit2833125759107520005.properties" />
     <property name="build.classes.dir" value="build/web/WEB-INF/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="ap.supported.internal" value="true" />
@@ -426,10 +426,10 @@
     <property name="war.ear.name" value="Library.war" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="com.univ.vintoniuk.command.ReturnBookCommandTest" name="goToReturningBook" time="0.359" />
-  <testcase classname="com.univ.vintoniuk.command.ReturnBookCommandTest" name="returningBook" time="0.031" />
+  <testcase classname="com.univ.vintoniuk.command.ReturnBookCommandTest" name="goToReturningBook" time="0.548" />
+  <testcase classname="com.univ.vintoniuk.command.ReturnBookCommandTest" name="returningBook" time="0.035" />
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[серп. 16, 2016 2:12:28 PM com.univ.vintoniuk.dao.DaoFactory <init>
+  <system-err><![CDATA[серп. 17, 2016 11:11:14 PM com.univ.vintoniuk.dao.DaoFactory <init>
 SEVERE: null
 javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
 	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:662)

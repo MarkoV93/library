@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Marko-ПК" name="com.univ.vintoniuk.dao.GenreDaoTest" skipped="0" tests="1" time="1.201" timestamp="2016-08-16T11:10:22">
+<testsuite errors="0" failures="0" hostname="Marko-ПК" name="com.univ.vintoniuk.dao.GenreDaoTest" skipped="0" tests="1" time="1.047" timestamp="2016-08-17T20:27:02">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="UA" />
@@ -65,7 +65,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.univ.vintoniuk.dao.GenreDaoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Marko\Documents\NetBeansProjects\Library\build\test\results\TEST-com.univ.vintoniuk.dao.GenreDaoTest.xml crashfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junitvmwatcher6946736844234608393.properties propsfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junit7339988171642521885.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.univ.vintoniuk.dao.GenreDaoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Marko\Documents\NetBeansProjects\Library\build\test\results\TEST-com.univ.vintoniuk.dao.GenreDaoTest.xml crashfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junitvmwatcher7753384342479456213.properties propsfile=C:\Users\Marko\Documents\NetBeansProjects\Library\build\junit6075013841124040335.properties" />
     <property name="build.classes.dir" value="build/web/WEB-INF/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="ap.supported.internal" value="true" />
@@ -426,8 +426,8 @@
     <property name="war.ear.name" value="Library.war" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="com.univ.vintoniuk.dao.GenreDaoTest" name="getAll" time="1.045" />
+  <testcase classname="com.univ.vintoniuk.dao.GenreDaoTest" name="getAll" time="0.92" />
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Tue Aug 16 14:10:22 EEST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+  <system-err><![CDATA[Wed Aug 17 23:27:03 EEST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
 ]]></system-err>
 </testsuite>

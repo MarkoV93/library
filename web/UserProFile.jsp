@@ -21,7 +21,7 @@
             </form>
             <!--tag for showing active user reserves-->
             <myt:MyRes login="${login}"/>
-            <h1> ${login} <fmt:message key="userPage"/></h1>
+            <h1><fmt:message key="userPage"/> ${login}</h1>
             ${message}
             <ul>
                 <!--table with all books i library-->

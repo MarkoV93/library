@@ -20,7 +20,7 @@ import com.univ.vintoniuk.model.Reserve;
  * Class for wieving reserves with status "refused" and "returned"
  * @return "/WievOldReserves.jsp"
  */
-public class WievOldReservesCommand extends Command {
+public class WievOldReservesCommand extends Command implements AdminCommand{
 
     @Override
     public String execute(IRequestWrapper request) throws DAOLibraryException {
